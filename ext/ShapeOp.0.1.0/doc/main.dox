@@ -1,0 +1,67 @@
+/**  \mainpage notitle
+
+\section introduction_sec Introduction
+
+This library introduces a unified optimization framework for static and dynamic geometry processing based on \cite Bouaziz2012 and \cite Bouaziz2014. This library comes from an effort to make research reproducible and to transfer knowledge and technology. 
+
+
+This project was a joint collaboration:
+
+- ShapeOp Solver: \a Sofien \a Bouaziz, \a Mario \a Deuss, \a Bailin \a Deng
+
+- Rhino/Kangaroo: \a Anders \a Holden \a Deleuran, \a Mario \a Deuss, \a Bailin \a Deng, \a Daniel \a Piker
+
+- Project Management: \a Mario \a Deuss, \a Mark \a Pauly 
+
+We would also like to thank all our research collaborators without which this project could not have been possible: 
+- \a Sebastian Martin
+- \a Tiantian Liu
+- \a Ladislav Kavan 
+- \a Yuliy Schwartzburg 
+- \a Thibaut Weise
+
+The library is subject to the terms of the Mozilla Public License v. 2.0. You can obtain a copy of the MPL2 at http://mozilla.org/MPL/2.0/.
+
+\section compilation_sec Compilation and Installation
+
+### Getting the library.
+
+Download the ShapeOp source code from http://shapeop.org/.
+ 
+### Compilation under Unix and Mac.
+
+Install CMake (http://www.cmake.org) and Eigen (http://eigen.tuxfamily.org/) using your favorite package manager. Then in the main repository type:
+
+ - mkdir build
+ - cd build
+ - cmake ..
+ - make
+
+After building the library, you can generate the documentation by typing:
+
+ - cd doc
+ - doxygen DoxyShapeOp
+
+To generate the documentation first install Doxygen (http://www.doxygen.org/). You will also need to have Bibtex and Perl available to get the bibliography compiled.
+
+### Compilation under Windows.
+
+Download and install CMake (http://www.cmake.org) and Eigen (http://eigen.tuxfamily.org/).
+ 
+ - configure the sources with cmake
+ - specify the eigen include directory
+ - generate a visual studio solution
+ - open the visual studio solution and compile.
+
+### More details on the different compilation options.
+
+For more details on the different compilation options see \ref doc_libshapeop.
+
+\section further_sec Documentation about the Libary and the Different Applications
+  
+ \li \ref doc_libshapeop
+ \li \ref doc_rhino
+ \li \ref doc_viewer
+ \li \ref tutorial_add
+
+**/

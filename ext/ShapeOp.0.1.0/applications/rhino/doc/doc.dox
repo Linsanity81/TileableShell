@@ -1,0 +1,47 @@
+/** \page doc_rhino ShapeOp for Grasshopper(Rhino)
+
+\section rhino_setup Setup
+
+The implementation has the following assembly dependencies which will need to be installed on your system:
+
+ -# Rhino/Grasshopper:
+	- Rhino Version 5 SR11 64-bit 
+	- Grasshopper 0.9.0076
+	- Microsoft .NET Framework 4.5.1
+	<br><br>
+
+ -# Libraries:
+	- ghpython.gha (http://www.food4rhino.com/project/ghpython)
+	- vcomp120.dll (http://www.microsoft.com/en-us/download/details.aspx?id=40784)
+	<br><br>
+	
+ -# Installing ghpython.gha:
+	- Move the files to the Grasshopper Libraries folder "%appdata%\Grasshopper\Libraries". 
+ 	- Unblock them "Right-click the files -> Properties -> Unblock -> Ok".
+	<br><br>
+
+ -# Adding Grasshopper Libraries folder to RhinoPython:
+	To import libraries placed in the Grasshopper libraries folder in a RhinoPython script you have to add its folder path to the list of directories which RhinoPython can access. You can do this in the script itself, or, hardcode it via the Rhino Python script editor (you only have to do this once):
+
+	- In Rhino type in the command "EditPythonScript". 
+	- In this Python editor go "Tools -> Options -> Files". 
+	- Here you will see an overview of the directories which are currently referenced. 
+	- Add a reference to the Grasshopper Libraries folder (it may be hidden, of so unhide it). 
+	<br><br>
+		
+ -# Installing ShapeOp.dll and vcomp120.dll:
+	You can either place these files in the default Windows folder (C:\\Windows) or the Grasshopper Libraries folder (remember to unblock the files). In the latter case you will have to add the Grasshopper Libraries folder path to the Window path:
+
+	- Navigate to "Control Panel\System and Security\System".
+	- Click "Advanced System Settings".
+	- Click "Environment Variables".
+	- Append the Grasshopper Libraries folder path to the Path variable (in the System variables list).
+	- Restart Rhino.
+	<br><br>
+
+
+\section rhino_run Run
+
+Open ShapeOpGHPython.ghx inside Rhino's Grasshopper.
+
+**/

@@ -1,0 +1,310 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"INSTALL",
+			"install"
+		],
+		"files" : 
+		[
+			"ext/OpenMesh/src/OpenMesh/Core/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 204,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 205,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 206,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 207,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 208,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 209,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 210,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 211,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 212,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 213,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 242,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include/OpenMesh/Core/Geometry",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/Config.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/EigenVectorT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/LoopSchemeMaskT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/MathDefs.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/NormalConeT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/NormalConeT_impl.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/Plane3d.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/QuadricT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/Vector11T.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/VectorT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Geometry/VectorT_inc.hh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include/OpenMesh/Core/IO",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/IO/BinaryHelper.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/IOInstances.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/IOManager.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/MeshIO.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/OFFFormat.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/OMFormat.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/OMFormatT_impl.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/Options.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/SR_binary.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/SR_binary_spec.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/SR_binary_vector_of_bool.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/SR_rbo.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/SR_store.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/SR_types.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/StoreRestore.hh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "include/OpenMesh/Core/IO/importer",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/IO/importer/BaseImporter.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/importer/ImporterT.hh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "include/OpenMesh/Core/IO/exporter",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/IO/exporter/BaseExporter.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/exporter/ExporterT.hh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "include/OpenMesh/Core/IO/reader",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/IO/reader/BaseReader.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/reader/OBJReader.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/reader/OFFReader.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/reader/OMReader.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/reader/PLYReader.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/reader/STLReader.hh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "include/OpenMesh/Core/IO/writer",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/IO/writer/BaseWriter.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/writer/OBJWriter.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/writer/OFFWriter.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/writer/OMWriter.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/writer/PLYWriter.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/writer/STLWriter.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/IO/writer/VTKWriter.hh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "include/OpenMesh/Core/Mesh",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/ArrayItems.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/ArrayKernel.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/ArrayKernelT_impl.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/AttribKernelT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/Attributes.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/BaseKernel.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/BaseMesh.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/Casts.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/CirculatorsT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/DefaultPolyMesh.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/DefaultTriMesh.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/FinalMeshItemsT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/Handles.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/IteratorsT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/PolyConnectivity.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/PolyConnectivity_inline_impl.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/PolyMeshT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/PolyMeshT_impl.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/PolyMesh_ArrayKernelT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/SmartHandles.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/SmartRange.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/Status.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/Tags.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/Traits.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/TriConnectivity.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/TriMeshT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/TriMeshT_impl.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/TriMesh_ArrayKernelT.hh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "Unspecified",
+			"destination" : "include/OpenMesh/Core/Mesh/gen",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/gen/circulators_header.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/gen/circulators_template.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/gen/footer.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/gen/iterators_header.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Mesh/gen/iterators_template.hh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 9,
+			"component" : "Unspecified",
+			"destination" : "include/OpenMesh/Core/System",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/System/OpenMeshDLLMacros.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/System/compiler.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/System/config.h",
+				"ext/OpenMesh/src/OpenMesh/Core/System/config.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/System/mostream.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/System/omstream.hh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 10,
+			"component" : "Unspecified",
+			"destination" : "include/OpenMesh/Core/Utils",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/AutoPropertyHandleT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/BaseProperty.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/Endian.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/GenProg.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/HandleToPropHandle.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/Noncopyable.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/Predicates.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/Property.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/PropertyContainer.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/PropertyCreator.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/PropertyManager.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/RandomNumberGenerator.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/SingletonT.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/SingletonT_impl.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/color_cast.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/typename.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/vector_cast.hh",
+				"ext/OpenMesh/src/OpenMesh/Core/Utils/vector_traits.hh"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 11,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/libOpenMeshCore.9.1.dylib"
+			],
+			"targetId" : "OpenMeshCore::@492d0f5311832d7fbb31",
+			"targetIndex" : 30,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 11,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"ext/OpenMesh/src/OpenMesh/Core/libOpenMeshCore.dylib"
+			],
+			"targetId" : "OpenMeshCore::@492d0f5311832d7fbb31",
+			"targetIndex" : 30,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "ext/OpenMesh/src/OpenMesh/Core",
+		"source" : "ext/OpenMesh/src/OpenMesh/Core"
+	}
+}

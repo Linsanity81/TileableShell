@@ -1,0 +1,1 @@
+/usr/bin/clang++  -fPIC -O3 -DNDEBUG -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -mmacosx-version-min=12.5 -dynamiclib -Wl,-headerpad_max_install_names -o libigl_stb_image.dylib -install_name @rpath/libigl_stb_image.dylib CMakeFiles/igl_stb_image.dir/igl_stb_image.cpp.o 

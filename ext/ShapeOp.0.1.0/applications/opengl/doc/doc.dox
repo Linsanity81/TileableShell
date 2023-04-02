@@ -1,0 +1,14 @@
+/** \page doc_viewer C++/OpenGL Viewer
+
+\section view_comp Compilation
+This viewer enables rendering and interaction with a 3d scene using ShapeOp. To compile, install 
+
+- glew (http://glew.sourceforge.net/)
+- glfw (http://www.glfw.org/)
+- opengp (https://github.com/OpenGP/OpenGP)
+
+When running cmake, specify the following additional argument:
+
+cmake -DOPENGL_VIEWER=TRUE
+
+**/

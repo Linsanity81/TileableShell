@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/ext/libigl/external/cgal" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/libigl/external/glad" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/libigl/external/glfw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/libigl/external/imgui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/libigl/external/imguizmo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/libigl/external/libigl-imgui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/libigl/external/stb" vcs="Git" />
+  </component>
+</project>

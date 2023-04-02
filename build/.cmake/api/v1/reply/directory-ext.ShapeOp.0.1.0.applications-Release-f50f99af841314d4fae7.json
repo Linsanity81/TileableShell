@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "ext/ShapeOp.0.1.0/applications",
+		"source" : "ext/ShapeOp.0.1.0/applications"
+	}
+}

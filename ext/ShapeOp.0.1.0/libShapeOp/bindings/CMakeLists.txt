@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.1)
+
+set(SWIG_PYTHON OFF CACHE BOOL "SWIG Python")
+set(SWIG_JAVA OFF CACHE BOOL "SWIG Java")
+set(SWIG_CSHARP OFF CACHE BOOL "SWIG CSharp")
+
+add_subdirectory(c)
+add_subdirectory(c++)
+if(SWIG_JAVA)
+    message("Java activated.")
+    add_subdirectory(java)
+endif()
+if(SWIG_PYTHON)
+    message("Python activated.")
+    add_subdirectory(python)
+endif()
+if(SWIG_CSHARP)
+    message("CSharp activated.")
+    add_subdirectory(csharp)
+endif()
+

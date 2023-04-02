@@ -1,0 +1,24 @@
+# bracket google.
+-A14
+# 2 space indent.
+-s2
+# Indent 'class' and 'struct' access modifiers, 'public:', 'protected:' and 'private:', one half indent.
+-xG
+# Indent 'switch' blocks so that the 'case X:' statements are indented in the switch block. The entire case block is indented.
+-S
+# Do not retain a backup of the original file. The original file is purged after it is formatted.
+-n
+# Don't break one-line blocks.
+-O
+# Don't break complex statements and multiple statements residing on a single line.
+-o
+# Attach a pointer or reference operator (*, &, or ^) to the variable name (right).
+-k3
+# Insert space padding after paren headers only (e.g. 'if', 'for', 'while'...).
+-H
+# Insert space padding around operators.
+-p
+# Maximum of 120 spaces to indent a continuation line
+-M120
+# Remove brackets from conditional statements if possible.
+# -xj

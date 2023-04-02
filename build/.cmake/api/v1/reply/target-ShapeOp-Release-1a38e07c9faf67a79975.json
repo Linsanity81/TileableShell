@@ -1,0 +1,277 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/libShapeOp.dylib"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_definitions",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"ext/ShapeOp.0.1.0/libShapeOp/CMakeLists.txt",
+			"ext/ShapeOp.0.1.0/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 35,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 31,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 32,
+				"parent" : 2
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 31,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 34,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 35,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 20,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-std=c++11 -stdlib=libc++ -Wall -g -O3 -DNDEBUG -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -mmacosx-version-min=12.5 -fPIC"
+				},
+				{
+					"fragment" : "-std=gnu++14"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "SHAPEOP_CLANG"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "SHAPEOP_EXPORT"
+				},
+				{
+					"define" : "ShapeOp_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 6,
+					"path" : "/usr/local/include/boost/include"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/Users/linsanity/Documents/GitHub/2022_TileableShell_public/ext/pugixml"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/Users/linsanity/Documents/GitHub/2022_TileableShell_public/ext/matplotlib_cpp"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/opt/homebrew/include/eigen3"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "/Users/linsanity/Documents/GitHub/2022_TileableShell_public/ext/ShapeOp.0.1.0/libShapeOp/src"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "/Users/linsanity/Documents/GitHub/2022_TileableShell_public/ext/ShapeOp.0.1.0/libShapeOp/api"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				7,
+				8,
+				9,
+				10,
+				11
+			]
+		}
+	],
+	"id" : "ShapeOp::@901ba867f94f20e5ed95",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "ShapeOp",
+	"nameOnDisk" : "libShapeOp.dylib",
+	"paths" : 
+	{
+		"build" : "ext/ShapeOp.0.1.0/libShapeOp",
+		"source" : "ext/ShapeOp.0.1.0/libShapeOp"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				7,
+				8,
+				9,
+				10,
+				11
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/src/Common.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/src/Constraint.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/src/Force.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/src/LSSolver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/src/Solver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/src/Types.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/api/API.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/src/Constraint.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/src/Force.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/src/LSSolver.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/src/Solver.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ext/ShapeOp.0.1.0/libShapeOp/api/API.cpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

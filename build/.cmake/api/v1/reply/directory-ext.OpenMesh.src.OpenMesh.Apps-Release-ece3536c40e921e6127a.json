@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "ext/OpenMesh/src/OpenMesh/Apps",
+		"source" : "ext/OpenMesh/src/OpenMesh/Apps"
+	}
+}
