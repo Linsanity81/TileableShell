@@ -1,2 +1,0 @@
-/usr/bin/ar qc libpugixml.a "CMakeFiles/pugixml-static.dir/src/pugixml.cpp.o"
-/usr/bin/ranlib libpugixml.a
