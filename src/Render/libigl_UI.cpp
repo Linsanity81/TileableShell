@@ -193,37 +193,37 @@ void StatusBar()
 
     ImGui::Text("Tile : %s", fileName.c_str());
 
-    ImGui::Text("Vertex Number : %zu", myBaseSurface.baseSurface.n_vertices());
+    // ImGui::Text("Vertex Number : %zu", myBaseSurface.baseSurface.n_vertices());
 
-    ImGui::Text("Edge Number : %zu", myBaseSurface.baseSurface.n_edges());
+    // ImGui::Text("Edge Number : %zu", myBaseSurface.baseSurface.n_edges());
 
-    ImGui::Text("Face Number : %zu", myBaseSurface.baseSurface.n_faces());
+    ImGui::Text("Tile Number : %zu", myBaseSurface.baseSurface.n_faces());
 
     ImGui::Text("Unique Polygon : %d", mySurfaceOptimizer.polygonClusterNum);
 
     ImGui::Text("Unique Block : %d", myCuttingPlaneOptimizer.blockClusterNum);
 
-    ImGui::Text("       ");
+    // ImGui::Text("       ");
 
-    ImGui::Text("Worst Penetration Appro : %f", myBaseSurface.worstFabApproximation);
+    // ImGui::Text("Worst Penetration Appro : %f", myBaseSurface.worstFabApproximation);
 
-    ImGui::Text("Worst Polygon Simi : %f", myBaseSurface.worstPolygonSimilarity);
+    // ImGui::Text("Worst Polygon Simi : %f", myBaseSurface.worstPolygonSimilarity);
 
-    ImGui::Text("Worst Planarity : %f", myBaseSurface.worstPlanarity);
+    // ImGui::Text("Worst Planarity : %f", myBaseSurface.worstPlanarity);
 
-    ImGui::Text("Worst Dihedral Angle Error : %f", myBaseSurface.worstDihedralAngleError);
+    // ImGui::Text("Worst Dihedral Angle Error : %f", myBaseSurface.worstDihedralAngleError);
 
-    ImGui::Text("Worst Edge Length Error: %f", myBaseSurface.worstEdgeLengthError);
+    // ImGui::Text("Worst Edge Length Error: %f", myBaseSurface.worstEdgeLengthError);
 
-    ImGui::Text("       ");
+    // ImGui::Text("       ");
 
-    ImGui::Text("Worst Block Error : %f", myShellStructure.worstBlockError);
+    // ImGui::Text("Worst Block Error : %f", myShellStructure.worstBlockError);
 
-    ImGui::Text("Worst Contact Angle Error : %f", myShellStructure.worstContactAngleError);
+    // ImGui::Text("Worst Contact Angle Error : %f", myShellStructure.worstContactAngleError);
 
-    ImGui::Text("Worst Overlapped Volume Ratio : %f", myShellStructure.worstOverlappedVolumeBlockRatio);
+    // ImGui::Text("Worst Overlapped Volume Ratio : %f", myShellStructure.worstOverlappedVolumeBlockRatio);
 
-    ImGui::Text("Worst Gap Volume Ratio : %f", myShellStructure.worstGapVolumeRatio);
+    // ImGui::Text("Worst Gap Volume Ratio : %f", myShellStructure.worstGapVolumeRatio);
 }
 
 void PolygonInformation()
@@ -279,7 +279,6 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
         ImGui::GetStyle().Colors[ImGuiCol_Text] = ImVec4(0.0f, 0.0f, 0.0f, 1.00f);
 
         ImGui::GetStyle().Colors[ImGuiCol_PopupBg] = ImVec4(1.0f, 1.0f, 1.0f, 1.00f);
-
 
         //ImGui::TextWrapped();
         //// Define window position + size
@@ -349,9 +348,9 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
             //// gap between the button group and head
             ImGui::Dummy(ImVec2(0.0f, 2.0f));
 
-            ImGui::Text("Planarization for Init");
-            ImGui::SameLine(half_width, p);
-            ImGui::Checkbox("##Planarization for Init", &isPlanarization);
+            // ImGui::Text("Planarization for Init");
+            // ImGui::SameLine(half_width, p);
+            // ImGui::Checkbox("##Planarization for Init", &isPlanarization);
 
             ImGui::Text("Scalar");
             ImGui::SameLine(half_width, p);
@@ -398,7 +397,7 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
 
             ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
-            if (ImGui::Button("Remesh", ImVec2(button_width, 0)))
+            if (ImGui::Button("Remesh", ImVec2(button_width*2.2, 0)))
             {
                 Initialization myInit;
                 myInit.isPlanarization = isPlanarization;
@@ -411,40 +410,40 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
                 myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
             }
 
-            ImGui::SameLine(0, button_horizontalGap);
+            // ImGui::SameLine(0, button_horizontalGap);
 
-            if (ImGui::Button("Save Remeshed Surface", ImVec2(button_width, 0)))
-            {
-                string outputFolderPath = igl::file_dialog_save();
-                if( outputFolderPath.empty())
-                    return;
+            // if (ImGui::Button("Save Remeshed Surface", ImVec2(button_width, 0)))
+            // {
+            //     string outputFolderPath = igl::file_dialog_save();
+            //     if( outputFolderPath.empty())
+            //         return;
 
-                myBaseSurface.WriteRemeshedBaseSurface(outputFolderPath);
-            }
+            //     myBaseSurface.WriteRemeshedBaseSurface(outputFolderPath);
+            // }
 
-            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
-            if (ImGui::Button("Load Remeshed Mesh", ImVec2(button_width, 0)))
-            {
-                inputFileName = igl::file_dialog_open();
-                if( inputFileName.empty() )
-                    return;
+            // if (ImGui::Button("Load Remeshed Mesh", ImVec2(button_width, 0)))
+            // {
+            //     inputFileName = igl::file_dialog_open();
+            //     if( inputFileName.empty() )
+            //         return;
 
-                mySurface.ClearSurface();
-                mySurface.LoadModel((char*)inputFileName.data());
+            //     mySurface.ClearSurface();
+            //     mySurface.LoadModel((char*)inputFileName.data());
 
-                Initialization myInit;
-                myInit.isPlanarization = isPlanarization;
-                myInit.InitBaseSurface(inputFileName, &myBaseSurface);
+            //     Initialization myInit;
+            //     myInit.isPlanarization = isPlanarization;
+            //     myInit.InitBaseSurface(inputFileName, &myBaseSurface);
 
-                myRender.ClearViewer(viewer);
+            //     myRender.ClearViewer(viewer);
 
-                myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
-                myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
-                myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
-            }
+            //     myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
+            //     myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
+            //     myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
+            // }
 
-            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
         }
 
         ImGui::Dummy(ImVec2(0.0f, gap_between_controlGroups));
@@ -474,21 +473,21 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
 
             mySurfaceOptimizer.dihedralClusterNum_start = mySurfaceOptimizer.dihedralClusterNum_end;
 
-            ImGui::Dummy(ImVec2(0.0f, 2.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 2.0f));
 
-            ImGui::Dummy(ImVec2(0.0f, 2.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 2.0f));
 
-            ImGui::Text("Mini Polygon Cluster Num Threshold");
-            ImGui::SameLine(half_width, p);
-            ImGui::SetNextItemWidth(half_width);
-            ImGui::DragInt("##Mini Polygon Cluster Num Threshold", &mySurfaceOptimizer.miniPolygonClusterNumThreshold);
+            // ImGui::Text("Mini Polygon Cluster Num Threshold");
+            // ImGui::SameLine(half_width, p);
+            // ImGui::SetNextItemWidth(half_width);
+            // ImGui::DragInt("##Mini Polygon Cluster Num Threshold", &mySurfaceOptimizer.miniPolygonClusterNumThreshold);
 
-            ImGui::Text("Merging Polygon Candi Num");
-            ImGui::SameLine(half_width, p);
-            ImGui::SetNextItemWidth(half_width);
-            ImGui::DragInt("##Merging Polygon Candi Num", &mySurfaceOptimizer.mergingCandidateNum);
+            // ImGui::Text("Merging Polygon Candi Num");
+            // ImGui::SameLine(half_width, p);
+            // ImGui::SetNextItemWidth(half_width);
+            // ImGui::DragInt("##Merging Polygon Candi Num", &mySurfaceOptimizer.mergingCandidateNum);
 
-            ImGui::Dummy(ImVec2(0.0f, 2.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 2.0f));
 
             ImGui::Text("Mini Block Cluster Num Threshold");
             ImGui::SameLine(half_width, p);
@@ -541,35 +540,35 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
                 myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
             }
 
-            ImGui::SameLine(0, button_horizontalGap);
+            // ImGui::SameLine(0, button_horizontalGap);
 
-            if (ImGui::Button("Merge", ImVec2(button_width, 0)))
-            {
-                mySurfaceOptimizer.PolygonOptimization_Merging();
+            // if (ImGui::Button("Merge", ImVec2(button_width, 0)))
+            // {
+            //     mySurfaceOptimizer.PolygonOptimization_Merging();
 
-                myRender.ClearViewer(viewer);
+            //     myRender.ClearViewer(viewer);
 
-                myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
-                myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
-                myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
-                myRender.DrawObjOptimizedModel(viewer, myBaseSurface.baseSurface, myBaseSurface.triBaseSurface, isShowEdgeClusterColor, polygonColorState, isShowOptimizedSurfaceEdgeNormal);
-                myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
-            }
+            //     myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
+            //     myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
+            //     myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
+            //     myRender.DrawObjOptimizedModel(viewer, myBaseSurface.baseSurface, myBaseSurface.triBaseSurface, isShowEdgeClusterColor, polygonColorState, isShowOptimizedSurfaceEdgeNormal);
+            //     myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
+            // }
 
-            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
-            if (ImGui::Button("Eli Outlier", ImVec2(button_width, 0)))
-            {
-                mySurfaceOptimizer.WorstCaseOptimization();
+            // if (ImGui::Button("Eli Outlier", ImVec2(button_width, 0)))
+            // {
+            //     mySurfaceOptimizer.WorstCaseOptimization();
 
-                myRender.ClearViewer(viewer);
+            //     myRender.ClearViewer(viewer);
 
-                myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
-                myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
-                myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
-                myRender.DrawObjOptimizedModel(viewer, myBaseSurface.baseSurface, myBaseSurface.triBaseSurface, isShowEdgeClusterColor, polygonColorState, isShowOptimizedSurfaceEdgeNormal);
-                myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
-            }
+            //     myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
+            //     myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
+            //     myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
+            //     myRender.DrawObjOptimizedModel(viewer, myBaseSurface.baseSurface, myBaseSurface.triBaseSurface, isShowEdgeClusterColor, polygonColorState, isShowOptimizedSurfaceEdgeNormal);
+            //     myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
+            // }
 
             ImGui::SameLine(0, button_horizontalGap);
 
@@ -595,23 +594,6 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
                 end = clock(); 
                 myShellStructure.shellOptimizationTime = (double(end-start)/CLOCKS_PER_SEC) / 60.0f;
 
-                myRender.ClearViewer(viewer);
-
-                myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
-                myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
-                myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
-                myRender.DrawObjOptimizedModel(viewer, myBaseSurface.baseSurface, myBaseSurface.triBaseSurface, isShowEdgeClusterColor, polygonColorState, isShowOptimizedSurfaceEdgeNormal);
-                myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
-                myRender.DrawObjShellStructModel(viewer, myShellStructure.shellStructure, myShellStructure.shellStructureTri);
-                myRender.DrawObjReplacedShellStructModel(viewer, myShellStructure.replacedShellStructure_LSM, myShellStructure.replacedShellStructureTri_LSM);
-                myRender.DrawObjReplacedShellPlanarModel(viewer, myShellStructure.replacedShellStructure_LSM_planar, myShellStructure.replacedShellStructureTri_LSM_planar);
-                myRender.DrawObjReplacedPenetrationVolumeModel(viewer, myShellStructure.replacedPenetrationVolumeTri);
-            }
-
-            ImGui::SameLine(0, button_horizontalGap);
-
-            if (ImGui::Button("Init Shell", ImVec2(button_width, 0)))
-            {
                 InitShellStructure();
 
                 myRender.ClearViewer(viewer);
@@ -627,7 +609,26 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
                 myRender.DrawObjReplacedPenetrationVolumeModel(viewer, myShellStructure.replacedPenetrationVolumeTri);
             }
 
-            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+            ImGui::SameLine(0, button_horizontalGap);
+
+            // if (ImGui::Button("Init Shell", ImVec2(button_width, 0)))
+            // {
+            //     InitShellStructure();
+
+            //     myRender.ClearViewer(viewer);
+
+            //     myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
+            //     myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
+            //     myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
+            //     myRender.DrawObjOptimizedModel(viewer, myBaseSurface.baseSurface, myBaseSurface.triBaseSurface, isShowEdgeClusterColor, polygonColorState, isShowOptimizedSurfaceEdgeNormal);
+            //     myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
+            //     myRender.DrawObjShellStructModel(viewer, myShellStructure.shellStructure, myShellStructure.shellStructureTri);
+            //     myRender.DrawObjReplacedShellStructModel(viewer, myShellStructure.replacedShellStructure_LSM, myShellStructure.replacedShellStructureTri_LSM);
+            //     myRender.DrawObjReplacedShellPlanarModel(viewer, myShellStructure.replacedShellStructure_LSM_planar, myShellStructure.replacedShellStructureTri_LSM_planar);
+            //     myRender.DrawObjReplacedPenetrationVolumeModel(viewer, myShellStructure.replacedPenetrationVolumeTri);
+            // }
+
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
             if (ImGui::Button("Save Shell", ImVec2(button_width, 0)))
             {
@@ -647,35 +648,35 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
 
             ImGui::SameLine(0, button_horizontalGap);
 
-            if (ImGui::Button("Save Printing", ImVec2(button_width, 0)))
-            {
-                string outputFolderPath = igl::file_dialog_save();
-                if( outputFolderPath.empty())
-                    return;
+            // if (ImGui::Button("Save Printing", ImVec2(button_width, 0)))
+            // {
+            //     string outputFolderPath = igl::file_dialog_save();
+            //     if( outputFolderPath.empty())
+            //         return;
 
-                string currPath = myShellStructure.CreateSavingAllFolderName(outputFolderPath, inputFileName, tileFileName);
-                // mySurfaceOptimizer.SaveInput(currPath);
-                // mySurfaceOptimizer.SaveSurface(currPath);
-                myShellStructure.SaveShell(currPath, true);
+            //     string currPath = myShellStructure.CreateSavingAllFolderName(outputFolderPath, inputFileName, tileFileName);
+            //     // mySurfaceOptimizer.SaveInput(currPath);
+            //     // mySurfaceOptimizer.SaveSurface(currPath);
+            //     myShellStructure.SaveShell(currPath, true);
 
-                mySurfaceOptimizer.SaveSurface(currPath);
+            //     mySurfaceOptimizer.SaveSurface(currPath);
 
-                mySurfaceOptimizer.SaveParameter2File(currPath);
-                mySurfaceOptimizer.SaveSurfaceOptimizationResult(currPath);
-                myShellStructure.SaveShellOptimizationResult(currPath);
-                SaveExcelTxt(currPath);
-            }
+            //     mySurfaceOptimizer.SaveParameter2File(currPath);
+            //     mySurfaceOptimizer.SaveSurfaceOptimizationResult(currPath);
+            //     myShellStructure.SaveShellOptimizationResult(currPath);
+            //     SaveExcelTxt(currPath);
+            // }
 
-            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
-            if (ImGui::Button("Generate Support", ImVec2(button_width, 0)))
-            {
-                string outputFolderPath = igl::file_dialog_save();
-                if( outputFolderPath.empty())
-                    return;
+            // if (ImGui::Button("Generate Support", ImVec2(button_width, 0)))
+            // {
+            //     string outputFolderPath = igl::file_dialog_save();
+            //     if( outputFolderPath.empty())
+            //         return;
 
-                myShellStructure.GenerateSupportForOrigShellBlocks(outputFolderPath);
-            }
+            //     myShellStructure.GenerateSupportForOrigShellBlocks(outputFolderPath);
+            // }
 
             ImGui::SameLine(0, button_horizontalGap);
 
@@ -699,113 +700,113 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
                 OpenMesh::IO::write_mesh(currMesh, outputFolderPath, ropt);
             }
 
-            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
-            if (ImGui::Button("Display", ImVec2(button_width, 0)))
-            {
-                myRender.ClearViewer(viewer);
+            // if (ImGui::Button("Display", ImVec2(button_width, 0)))
+            // {
+            //     myRender.ClearViewer(viewer);
 
-                myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
-                myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
-                myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
-                myRender.DrawObjOptimizedModel(viewer, myBaseSurface.baseSurface, myBaseSurface.triBaseSurface, isShowEdgeClusterColor, polygonColorState, isShowOptimizedSurfaceEdgeNormal);
-                myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
-                myRender.DrawObjShellStructModel(viewer, myShellStructure.shellStructure, myShellStructure.shellStructureTri);
-                myRender.DrawObjReplacedShellStructModel(viewer, myShellStructure.replacedShellStructure_LSM, myShellStructure.replacedShellStructureTri_LSM);
-                myRender.DrawObjReplacedShellPlanarModel(viewer, myShellStructure.replacedShellStructure_LSM_planar, myShellStructure.replacedShellStructureTri_LSM_planar);
-                myRender.DrawObjReplacedPenetrationVolumeModel(viewer, myShellStructure.replacedPenetrationVolumeTri);
-            }
+            //     myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
+            //     myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
+            //     myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
+            //     myRender.DrawObjOptimizedModel(viewer, myBaseSurface.baseSurface, myBaseSurface.triBaseSurface, isShowEdgeClusterColor, polygonColorState, isShowOptimizedSurfaceEdgeNormal);
+            //     myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
+            //     myRender.DrawObjShellStructModel(viewer, myShellStructure.shellStructure, myShellStructure.shellStructureTri);
+            //     myRender.DrawObjReplacedShellStructModel(viewer, myShellStructure.replacedShellStructure_LSM, myShellStructure.replacedShellStructureTri_LSM);
+            //     myRender.DrawObjReplacedShellPlanarModel(viewer, myShellStructure.replacedShellStructure_LSM_planar, myShellStructure.replacedShellStructureTri_LSM_planar);
+            //     myRender.DrawObjReplacedPenetrationVolumeModel(viewer, myShellStructure.replacedPenetrationVolumeTri);
+            // }
 
-            ImGui::SameLine(0, button_horizontalGap);
+            // ImGui::SameLine(0, button_horizontalGap);
 
-            if (ImGui::Button("Align Polygons", ImVec2(button_width, 0)))
-            {
-                inputFileName = igl::file_dialog_open();
-                if( inputFileName.empty() )
-                    return;
+            // if (ImGui::Button("Align Polygons", ImVec2(button_width, 0)))
+//             {
+//                 inputFileName = igl::file_dialog_open();
+//                 if( inputFileName.empty() )
+//                     return;
 
-                string currFolderPath, currFileName;
-                GetFolderPath(inputFileName, currFolderPath);
-                GetFileName(inputFileName, currFileName);
+//                 string currFolderPath, currFileName;
+//                 GetFolderPath(inputFileName, currFolderPath);
+//                 GetFileName(inputFileName, currFileName);
 
-//                cout << currFolderPath << endl;
-//                cout << currFileName << endl;
+// //                cout << currFolderPath << endl;
+// //                cout << currFileName << endl;
 
-                for (int i = 1; i <= 7; ++i)
-                {
-                    /// Setup a folder to save puzzle files
-                    string command;
-                    command = "mkdir -p " + currFolderPath + "Polygon_" + to_string(i);
-                    system(command.c_str());
+//                 for (int i = 1; i <= 7; ++i)
+//                 {
+//                     /// Setup a folder to save puzzle files
+//                     string command;
+//                     command = "mkdir -p " + currFolderPath + "Polygon_" + to_string(i);
+//                     system(command.c_str());
 
-                    string currSavingFolder = currFolderPath + "Polygon_" + to_string(i) + "/";
+//                     string currSavingFolder = currFolderPath + "Polygon_" + to_string(i) + "/";
 
-                    string currFilePath = inputFileName;
-                    currFilePath = currFilePath.substr(0, currFilePath.size() - 5);
-                    currFilePath = currFilePath + to_string(i) + ".obj";
+//                     string currFilePath = inputFileName;
+//                     currFilePath = currFilePath.substr(0, currFilePath.size() - 5);
+//                     currFilePath = currFilePath + to_string(i) + ".obj";
 
-                    cout << currFilePath << endl;
+//                     cout << currFilePath << endl;
 
-                    PolyMesh currMesh;
-                    OpenMesh::IO::read_mesh(currMesh, currFilePath);
+//                     PolyMesh currMesh;
+//                     OpenMesh::IO::read_mesh(currMesh, currFilePath);
 
-                    vector<Vector3d> refVerList;
+//                     vector<Vector3d> refVerList;
 
-                    {
-                        PolyMesh::VertexIter          v_it, v_end(currMesh.vertices_end());
-                        for (v_it=currMesh.vertices_begin(); v_it!=v_end; ++v_it)
-                        {
-                            refVerList.push_back(Vector3d(currMesh.point(*v_it)[0], currMesh.point(*v_it)[1], currMesh.point(*v_it)[2]));
-                        }
-                    }
+//                     {
+//                         PolyMesh::VertexIter          v_it, v_end(currMesh.vertices_end());
+//                         for (v_it=currMesh.vertices_begin(); v_it!=v_end; ++v_it)
+//                         {
+//                             refVerList.push_back(Vector3d(currMesh.point(*v_it)[0], currMesh.point(*v_it)[1], currMesh.point(*v_it)[2]));
+//                         }
+//                     }
 
-                    for (int j = 1; j <= 7; ++j )
-                    {
-                        if (i == j)
-                            continue;
+//                     for (int j = 1; j <= 7; ++j )
+//                     {
+//                         if (i == j)
+//                             continue;
 
-                        string alignFilePath = currFolderPath + "Polygon_" + to_string(j) + ".obj";
+//                         string alignFilePath = currFolderPath + "Polygon_" + to_string(j) + ".obj";
 
-                        cout << alignFilePath << endl;
+//                         cout << alignFilePath << endl;
 
-                        PolyMesh alignMesh;
-                        OpenMesh::IO::read_mesh(alignMesh, alignFilePath);
+//                         PolyMesh alignMesh;
+//                         OpenMesh::IO::read_mesh(alignMesh, alignFilePath);
 
-                        vector<Vector3d> currVerList;
+//                         vector<Vector3d> currVerList;
 
-                        {
-                            PolyMesh::VertexIter          v_it, v_end(alignMesh.vertices_end());
-                            for (v_it=alignMesh.vertices_begin(); v_it!=v_end; ++v_it)
-                            {
-                                currVerList.push_back(Vector3d(alignMesh.point(*v_it)[0], alignMesh.point(*v_it)[1], alignMesh.point(*v_it)[2]));
-                            }
-                        }
+//                         {
+//                             PolyMesh::VertexIter          v_it, v_end(alignMesh.vertices_end());
+//                             for (v_it=alignMesh.vertices_begin(); v_it!=v_end; ++v_it)
+//                             {
+//                                 currVerList.push_back(Vector3d(alignMesh.point(*v_it)[0], alignMesh.point(*v_it)[1], alignMesh.point(*v_it)[2]));
+//                             }
+//                         }
 
-                        double currSimi;
-                        vector<Vector3d> bestAlignList;
+//                         double currSimi;
+//                         vector<Vector3d> bestAlignList;
 
-                        myBaseSurface.FindBestMatchingVerListWithFlipping(refVerList, currVerList, bestAlignList, currSimi);
+//                         myBaseSurface.FindBestMatchingVerListWithFlipping(refVerList, currVerList, bestAlignList, currSimi);
 
-                        MatrixXd alignedP_mat;
-                        myBaseSurface.AlignPolygon_LSM_FixedConfig(refVerList, bestAlignList, alignedP_mat);
+//                         MatrixXd alignedP_mat;
+//                         myBaseSurface.AlignPolygon_LSM_FixedConfig(refVerList, bestAlignList, alignedP_mat);
 
-                        std::ofstream out(currSavingFolder + "Polygon_" + to_string(j) + "_" + to_string(currSimi) + ".obj");
-                        std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
-                        std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
+//                         std::ofstream out(currSavingFolder + "Polygon_" + to_string(j) + "_" + to_string(currSimi) + ".obj");
+//                         std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
+//                         std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
 
-                        for (int m = 0; m < alignedP_mat.cols(); ++m)
-                        {
-                            cout << "v " << alignedP_mat(0, m) << " " << alignedP_mat(1, m) << " " << alignedP_mat(2, m) << endl;
-                        }
+//                         for (int m = 0; m < alignedP_mat.cols(); ++m)
+//                         {
+//                             cout << "v " << alignedP_mat(0, m) << " " << alignedP_mat(1, m) << " " << alignedP_mat(2, m) << endl;
+//                         }
 
-                        cout << "f 1 2 3 4" << endl;
+//                         cout << "f 1 2 3 4" << endl;
 
-                        std::cout.rdbuf(coutbuf);
-                    }
+//                         std::cout.rdbuf(coutbuf);
+//                     }
 
-                    cout << endl;
-                }
-            }
+//                     cout << endl;
+//                 }
+//             }
 
             ImGui::Dummy(ImVec2(0.0f, 3.0f));
         }
@@ -890,43 +891,43 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
 //            ImGui::SameLine(half_width, p);
 //            ImGui::Checkbox("##Show Axes", &visibleAxes);
 
-            ImGui::Text("Show Obj Model");
+            ImGui::Text("Show Input Surface");
             ImGui::SameLine(half_width, p);
-            ImGui::Checkbox("##Show Obj Model", &visibleObjModel);
+            ImGui::Checkbox("##Show Input Surface", &visibleObjModel);
 
             ImGui::Text("Show Texture");
             ImGui::SameLine(half_width, p);
             ImGui::Checkbox("##Show Texture", &visibleObjTexture);
 
-            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
             ImGui::Text("Show Remeshed Model");
             ImGui::SameLine(half_width, p);
             ImGui::Checkbox("##Show Remeshed Model", &visibleObjRemeshingModel);
 
-            ImGui::Text("Show Remeshed Edge Normal");
-            ImGui::SameLine(half_width, p);
-            ImGui::Checkbox("##Show Remeshed Edge Normal", &isShowRemeshedSurfaceEdgeNormal);
+            // ImGui::Text("Show Remeshed Edge Normal");
+            // ImGui::SameLine(half_width, p);
+            // ImGui::Checkbox("##Show Remeshed Edge Normal", &isShowRemeshedSurfaceEdgeNormal);
 
-            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
             ImGui::Text("Show Optimized Model");
             ImGui::SameLine(half_width, p);
             ImGui::Checkbox("##Show Optimized Model", &visibleObjOptimizedModel);
 
-            ImGui::Text("Polygon Color State");
-            ImGui::SameLine(half_width / 1.2f, p * 0.5f);
-            ImGui::DragInt("##Polygon Color State", &polygonColorState);
+            // ImGui::Text("Polygon Color State");
+            // ImGui::SameLine(half_width / 1.2f, p * 0.5f);
+            // ImGui::DragInt("##Polygon Color State", &polygonColorState);
 
-            ImGui::Text("Show Edge Color");
-            ImGui::SameLine(half_width, p);
-            ImGui::Checkbox("##Show Edge Color", &isShowEdgeClusterColor);
+            // ImGui::Text("Show Edge Color");
+            // ImGui::SameLine(half_width, p);
+            // ImGui::Checkbox("##Show Edge Color", &isShowEdgeClusterColor);
 
-            ImGui::Text("Show Optimized Edge Normal");
-            ImGui::SameLine(half_width, p);
-            ImGui::Checkbox("##Show Optimized Edge Normal", &isShowOptimizedSurfaceEdgeNormal);
+            // ImGui::Text("Show Optimized Edge Normal");
+            // ImGui::SameLine(half_width, p);
+            // ImGui::Checkbox("##Show Optimized Edge Normal", &isShowOptimizedSurfaceEdgeNormal);
 
-            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
             ImGui::Text("Show Replaced Surface");
             ImGui::SameLine(half_width, p);
@@ -936,17 +937,17 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
             ImGui::SameLine(half_width, p);
             ImGui::Checkbox("##Show Shell Structure", &visibleObjShellStructure);
 
+            // ImGui::Text("Show Replaced Shell");
+            // ImGui::SameLine(half_width, p);
+            // ImGui::Checkbox("##Show Replaced Shell", &visibleObjReplacedShell);
+
             ImGui::Text("Show Replaced Shell");
             ImGui::SameLine(half_width, p);
-            ImGui::Checkbox("##Show Replaced Shell", &visibleObjReplacedShell);
+            ImGui::Checkbox("##Show Replaced Shell", &visibleObjReplacedPlanarShell);
 
-            ImGui::Text("Show Replaced Planar Shell");
-            ImGui::SameLine(half_width, p);
-            ImGui::Checkbox("##Show Replaced Planar Shell", &visibleObjReplacedPlanarShell);
-
-            ImGui::Text("Show Penetration Volume");
-            ImGui::SameLine(half_width, p);
-            ImGui::Checkbox("##Show Penetration Volume", &visibleObjPenetrationVolume);
+            // ImGui::Text("Show Penetration Volume");
+            // ImGui::SameLine(half_width, p);
+            // ImGui::Checkbox("##Show Penetration Volume", &visibleObjPenetrationVolume);
 
             ImGui::Dummy(ImVec2(0.0f, gap_between_renderGroups));
 
