@@ -225,11 +225,11 @@ void CuttingPlane::UpdateCuttingPlane(float currOffsetAngle)
 {
     offsetAngle += currOffsetAngle;
 
-//    if (fabs(offsetAngle) > 60)
-//    {
-//        offsetAngle -= currOffsetAngle;
-//        return;
-//    }
+   if (fabs(offsetAngle) > 10)
+   {
+       offsetAngle -= currOffsetAngle;
+       return;
+   }
 
     if (offsetAngle == 0)
         return;

@@ -452,7 +452,7 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
         //// Operation Control - 5
         ///////////////////////////////////////////////////////////////////////////
 
-        if (ImGui::CollapsingHeader("Polygon Optimization", ImGuiTreeNodeFlags_DefaultOpen))
+        if (ImGui::CollapsingHeader("Mesh Optimization", ImGuiTreeNodeFlags_DefaultOpen))
         {
             float half_width = (w - p) / 2.f;
 
@@ -499,12 +499,12 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
             ImGui::SetNextItemWidth(half_width);
             ImGui::DragInt("##Target Block Cluster Num", &myCuttingPlaneOptimizer.targetBlockClusterNum);
 
-            ImGui::Dummy(ImVec2(0.0f, 2.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 2.0f));
 
-            ImGui::Text("Tolerance");
-            ImGui::SameLine(half_width, p);
-            ImGui::SetNextItemWidth(half_width);
-            ImGui::DragFloat("##Tolerance", &myBaseSurface.tolerance, 1.0f, 0.0f, 1.0f, "%.7f", 1.0f);
+            // ImGui::Text("Tolerance");
+            // ImGui::SameLine(half_width, p);
+            // ImGui::SetNextItemWidth(half_width);
+            // ImGui::DragFloat("##Tolerance", &myBaseSurface.tolerance, 1.0f, 0.0f, 1.0f, "%.7f", 1.0f);
 
             ImGui::Text("Thickness");
             ImGui::SameLine(half_width, p);
