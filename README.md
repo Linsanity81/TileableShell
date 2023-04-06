@@ -123,24 +123,24 @@ Import a Flower.obj file and 3^6-6^2_11844.obj by clicking `read` and `texture` 
 </p>
 
 ### Step 2: optimize suface
-Set the `Edge K` as 4 and `Dihedral K` as 6, click the `Op Surface` button to optimize surface first.
+Set the `Edge K` as 4 and `Dihedral K` as 6, click the `Op Surface` button to optimize surface first. 
 
 <p align="center">
- <img width=640px height=400px src="doc/Step2.png" alt="level-6 Puzzle">
+ <img width=640px height=400px src="doc/Step2.png" alt="Optimized Surface">
 </p>
 
 ### Step 3: optimize cutting plane
 Set the `Mini Block Cluster Num` as 10 and `Target Block Cluster Num` as 1. Set `Thickness` as 0.04. Click the `Op CuttingPlane` button to start cutting plane optimization.
 
 <p align="center">
- <img width=640px height=400px src="doc/Step3.png" alt="Level-12 Puzzle">
+ <img width=640px height=400px src="doc/Step3.png" alt="Optimized Shell Structure">
 </p>
 
 ### Step 4: save optimized model
 Lastly, you can click `Save Shell` to save the related data and *.obj* files that can be used for fabrication.
 
 <p align="center">
- <img width=540px height=160px src="doc/Step4.png" alt="Level-12 Puzzle">
+ <img width=540px height=160px src="doc/Step4.png" alt="Saving Files">
 </p>
 
 ## Authors <a name = "authors"></a>
