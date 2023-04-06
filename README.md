@@ -2,7 +2,7 @@
  <img width=640px height=260px src="doc/teaser.png" alt="Project logo">
 </p>
 
-<h3 align="center">Computational Design of High-level Interlocking Puzzles</h3>
+<h3 align="center">Masonry Shell Structures with Discrete Equivalence Classes</h3>
 
 <div align="center">
 
