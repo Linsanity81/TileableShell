@@ -112,35 +112,39 @@ The control panel is shown below. There are 4 components in the control panel: *
 - ### Render Control
   Control the object visualization state.
 
-## Create a level-12 Cube Puzzle by Yourself ! <a name = "create_puzzle"></a>
-These instructions gives an example to you of how to use our code to generate a masonry shell structures with discrete equivalence classes. For example, to generate a level-12 cube puzzle, we first constrct a level-6 cube puzzle and modify it to level-12 puzzle; see *Section 4* in our paper for detailed explanation of construction and modifying algorithm.
+## Create a Masonry Shell Structures with Discrete Equivalence Classes by Yourself ! <a name = "create_puzzle"></a>
+These instructions gives an example to you of how to use our code to generate a masonry shell structures with discrete equivalence classes. 
 
 ### Step 1: import & remesh
-Import a Flower.obj file and 3^6-6^2_11844.obj by clicking `read` and `texture` button, respectively. Then click the `remesh` button to get a remeshed surface.
+Import a Flower.obj file and 3^6-6^2_11844.obj by clicking `read` and `texture` button, respectively. Set `Scalar` as 4.0 and `RotAngle` as -15. Then click the `remesh` button to get a remeshed surface.
 
 <p align="center">
- <img width=640px height=400px src="doc/remeshed_surface.png" alt="Remeshed Surface">
+ <img width=640px height=400px src="doc/Step1.png" alt="Remeshed Surface">
 </p>
 
 ### Step 2: optimize suface
-Set the `Level of Difficulty` as 6 and click the `Construct` button to create a piece-4 level-6 cube puzzle.
+Set the `Edge K` as 4 and `Dihedral K` as 6, click the `Op Surface` button to optimize surface first.
 
 <p align="center">
- <img width=640px height=400px src="doc/level-6_puzzle.png" alt="level-6 Puzzle">
+ <img width=640px height=400px src="doc/Step2.png" alt="level-6 Puzzle">
 </p>
 
 ### Step 3: optimize cutting plane
-Set the `Target Level (Modify)` as 12 and click the `Modify` button to start modifying.
+Set the `Mini Block Cluster Num` as 10 and `Target Block Cluster Num` as 1. Set `Thickness` as 0.04. Click the `Op CuttingPlane` button to start cutting plane optimization.
 
 <p align="center">
- <img width=640px height=400px src="doc/level-12_puzzle.png" alt="Level-12 Puzzle">
+ <img width=640px height=400px src="doc/Step3.png" alt="Level-12 Puzzle">
 </p>
 
 ### Step 4: save optimized model
-Set the `Puzzle Tolerance` greater than 0 to create gaps between pieces. Here we suggest to set 0.005. Lastly, you can click `Save Puz` to save the *.puz* file and *.obj* files of each piece that can be used for fabrication.
+Lastly, you can click `Save Shell` to save the related data and *.obj* files that can be used for fabrication.
+
+<p align="center">
+ <img width=540px height=160px src="doc/Step4.png" alt="Level-12 Puzzle">
+</p>
 
 ## Authors <a name = "authors"></a>
-- [Rulin Chen](https://github.com/Linsanity81) 
+- [Rulin Chen](https://linsanity81.github.io) 
 - [Pengyun Qiu](https://sutd-cgl.github.io/people.html)
 - [Peng Song](https://songpenghit.github.io/)
 - [Bailin Deng](http://www.bdeng.me)
