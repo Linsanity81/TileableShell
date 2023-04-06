@@ -26,7 +26,7 @@ you can use the following bibtex snippet:
 - [About](#about)
 - [Getting Started](#getting_started)
 - [GUI Interface](#usage)
-- [Create a level-12 Cube Puzzle by Yourself !](#create_puzzle)
+- [Create a Masonry Shell Structures with Discrete Equivalence Classes!](#create_puzzle)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
