@@ -56,7 +56,7 @@ $ make -j 16
 ```
 The integer following make -j is the number of threads supported by your CPU architecture. Replace it with your optimal value.
 
-- **Windows**: currently unavailable.
+- **Windows**: our code can be run on VM16 + Ubuntu 20.04 environment.
 
 
 ## GUI Interface <a name = "usage"></a>
