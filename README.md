@@ -89,23 +89,27 @@ The control panel is shown below. There are 4 components in the control panel: *
 
   `Remesh` Map the 2D tile pattern to input surface using ARAP initialization.
 
+- ### Import Remeshed Model
+
+  `Load Remeshed Mesh` Load the remeshed input mesh.
+
 - ### Mesh Optimization
 
   `Edge K` Determine the target cluster number of edge length. 
 
   `Dihedral K` Determine the target cluster number of dihedral angle.
 
-  `Mini Block Cluster Num` Determine the threshold to define if the block cluster is considered to be merged.
+  `Mini Block Cluster` Determine the threshold to define if the block cluster is considered to be merged.
 
-  `Target Block Cluster Num` Determine the threshold to stop the block cluster merging operation. 
+  `Target Block Cluster` Determine the threshold to stop the block cluster merging operation. 
 
-  `Thinkness` Determine the thickness of each shell block.
+  `Thickness` Determine the thickness of each shell block.
 
-  `Op Surface` Optimize surface to reach lower number of polygon templates.
+  `Opt Surface` Optimize surface to reach lower number of polygon templates.
 
-  `Save Surface` Save optimzied surface data. 
+  `Opt Cutting Plane` Optimize cutting plane to reach lower number of shell block templates.
 
-  `Op Cutting Plane` Optimize cutting plane to reach lower number of shell block templates.
+  `Create Shell` Create shell structure based on given thickness. 
 
   `Save Shell` Save optimzied shell structure data. 
 
@@ -116,28 +120,28 @@ The control panel is shown below. There are 4 components in the control panel: *
 These instructions gives an example to you of how to use our code to generate a masonry shell structures with discrete equivalence classes. 
 
 ### Step 1: import & remesh
-Import a Flower.obj file and 3^6-6^2_11844.obj by clicking `read` and `texture` button, respectively. Set `Scalar` as 4.0 and `RotAngle` as -15. Then click the `remesh` button to get a remeshed surface.
+Import a Hyperbolic.obj file and 4^4_7200.obj by clicking `read` and `texture` button, respectively. Set `Scalar` as 5.0 and `RotAngle` as -15. Then click the `remesh` button to get a remeshed surface.
 
 <p align="center">
  <img width=640px height=400px src="doc/Step1.png" alt="Remeshed Surface">
 </p>
 
 ### Step 2: optimize suface
-Set the `Edge K` as 4 and `Dihedral K` as 6, click the `Op Surface` button to optimize surface first. 
+Set the `Edge K` as 4 and `Dihedral K` as 4, click the `Opt Surface` button to optimize surface first. 
 
 <p align="center">
  <img width=640px height=400px src="doc/Step2.png" alt="Optimized Surface">
 </p>
 
 ### Step 3: optimize cutting plane
-Set the `Mini Block Cluster Num` as 10 and `Target Block Cluster Num` as 1. Set `Thickness` as 0.04. Click the `Op CuttingPlane` button to start cutting plane optimization.
+Set the `Mini Block Cluster` as 10 and `Target Block Cluster` as 1. Set `Thickness` as 0.04. Click the `Opt CuttingPlane` button to start cutting plane optimization. Then click the `Create Shell` button to create shell structures with given thickness.
 
 <p align="center">
  <img width=640px height=400px src="doc/Step3.png" alt="Optimized Shell Structure">
 </p>
 
 ### Step 4: save optimized model
-Lastly, you can click `Save Shell` to save the related data and *.obj* files that can be used for fabrication.
+Lastly, you can click `Save Shell` to save the related data and *.obj* files that can be used for fabrication. Here we suggest to use MeshLab to view the generated *.obj* files.
 
 <p align="center">
  <img width=540px height=160px src="doc/Step4.png" alt="Saving Files">

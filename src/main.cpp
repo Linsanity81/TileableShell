@@ -295,7 +295,7 @@ int main(int argc, char *argv[])
                 return 0;
             };
 
-    viewer.launch(true,false,"Tileable Structure", windowWidth, windowHeight);
+    viewer.launch(true,false,"Tileable Shell", windowWidth, windowHeight);
 
     return 1;
 }

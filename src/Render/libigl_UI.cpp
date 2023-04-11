@@ -449,6 +449,49 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
         ImGui::Dummy(ImVec2(0.0f, gap_between_controlGroups));
 
         ///////////////////////////////////////////////////////////////////////////
+        //// Operation Control - 1
+        ///////////////////////////////////////////////////////////////////////////
+
+        if (ImGui::CollapsingHeader("Import Remeshed Model", ImGuiTreeNodeFlags_DefaultOpen))
+        {
+            float head_scale = 1.3f;
+            float gap_between_paraGroups = 8.0f;
+            float half_width = (w - p) / 2.f;
+
+            //// gap between the button group and head
+            ImGui::Dummy(ImVec2(0.0f, 2.0f));
+
+            ////////////////////////////////////////////////////////////////////
+            //// model&shell&parts related
+            //// buttons for model/shell IO/generate
+
+            if (ImGui::Button("Load Remeshed Mesh", ImVec2(button_width*2.2, 0)))
+            {
+                inputFileName = igl::file_dialog_open();
+                if( inputFileName.empty() )
+                    return;
+
+                mySurface.ClearSurface();
+                mySurface.LoadModel((char*)inputFileName.data());
+
+                Initialization myInit;
+                myInit.isPlanarization = isPlanarization;
+                myInit.InitBaseSurface(inputFileName, &myBaseSurface);
+
+                myRender.ClearViewer(viewer);
+
+                myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
+                myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
+                myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
+            }
+
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
+        }
+
+        ImGui::Dummy(ImVec2(0.0f, gap_between_controlGroups));
+
+
+        ///////////////////////////////////////////////////////////////////////////
         //// Operation Control - 5
         ///////////////////////////////////////////////////////////////////////////
 
@@ -489,12 +532,12 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
 
             // ImGui::Dummy(ImVec2(0.0f, 2.0f));
 
-            ImGui::Text("Mini Block Cluster Num Threshold");
+            ImGui::Text("Mini Block Cluster");
             ImGui::SameLine(half_width, p);
             ImGui::SetNextItemWidth(half_width);
             ImGui::DragInt("##Mini Block Cluster Num Threshold", &myCuttingPlaneOptimizer.miniBlockClusterThreshold);
 
-            ImGui::Text("Target Block Cluster Num");
+            ImGui::Text("Target Block Cluster");
             ImGui::SameLine(half_width, p);
             ImGui::SetNextItemWidth(half_width);
             ImGui::DragInt("##Target Block Cluster Num", &myCuttingPlaneOptimizer.targetBlockClusterNum);
@@ -520,7 +563,7 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
             //// model&shell&parts related
             //// buttons for model/shell IO/generate
 
-            if (ImGui::Button("Op Surface", ImVec2(button_width, 0)))
+            if (ImGui::Button("Opt Surface", ImVec2(button_width, 0)))
             {
                 clock_t start,end;
                 start = clock(); 
@@ -572,19 +615,19 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
 
             ImGui::SameLine(0, button_horizontalGap);
 
-            if (ImGui::Button("Save Surface", ImVec2(button_width, 0)))
-            {
-                string outputFolderPath = igl::file_dialog_save();
-                if( outputFolderPath.empty())
-                    return;
+            // if (ImGui::Button("Save Surface", ImVec2(button_width, 0)))
+            // {
+            //     string outputFolderPath = igl::file_dialog_save();
+            //     if( outputFolderPath.empty())
+            //         return;
 
-                mySurfaceOptimizer.CreateFolderName(outputFolderPath, inputFileName, tileFileName);
-                mySurfaceOptimizer.SaveSurface(mySurfaceOptimizer.savingFullPath);
-            }
+            //     mySurfaceOptimizer.CreateFolderName(outputFolderPath, inputFileName, tileFileName);
+            //     mySurfaceOptimizer.SaveSurface(mySurfaceOptimizer.savingFullPath);
+            // }
 
-            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+            // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
-            if (ImGui::Button("Op CuttingPlane", ImVec2(button_width, 0)))
+            if (ImGui::Button("Opt CuttingPlane", ImVec2(button_width, 0)))
             {
                 clock_t start,end;
                 start = clock();  
@@ -594,6 +637,25 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
                 end = clock(); 
                 myShellStructure.shellOptimizationTime = (double(end-start)/CLOCKS_PER_SEC) / 60.0f;
 
+                // InitShellStructure();
+
+                myRender.ClearViewer(viewer);
+
+                myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
+                myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
+                myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
+                myRender.DrawObjOptimizedModel(viewer, myBaseSurface.baseSurface, myBaseSurface.triBaseSurface, isShowEdgeClusterColor, polygonColorState, isShowOptimizedSurfaceEdgeNormal);
+                myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
+                myRender.DrawObjShellStructModel(viewer, myShellStructure.shellStructure, myShellStructure.shellStructureTri);
+                myRender.DrawObjReplacedShellStructModel(viewer, myShellStructure.replacedShellStructure_LSM, myShellStructure.replacedShellStructureTri_LSM);
+                myRender.DrawObjReplacedShellPlanarModel(viewer, myShellStructure.replacedShellStructure_LSM_planar, myShellStructure.replacedShellStructureTri_LSM_planar);
+                myRender.DrawObjReplacedPenetrationVolumeModel(viewer, myShellStructure.replacedPenetrationVolumeTri);
+            }
+
+            ImGui::Dummy(ImVec2(0.0f, 3.0f));
+
+            if (ImGui::Button("Create Shell", ImVec2(button_width, 0)))
+            {
                 InitShellStructure();
 
                 myRender.ClearViewer(viewer);
@@ -611,23 +673,6 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
 
             ImGui::SameLine(0, button_horizontalGap);
 
-            // if (ImGui::Button("Init Shell", ImVec2(button_width, 0)))
-            // {
-            //     InitShellStructure();
-
-            //     myRender.ClearViewer(viewer);
-
-            //     myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
-            //     myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
-            //     myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
-            //     myRender.DrawObjOptimizedModel(viewer, myBaseSurface.baseSurface, myBaseSurface.triBaseSurface, isShowEdgeClusterColor, polygonColorState, isShowOptimizedSurfaceEdgeNormal);
-            //     myRender.DrawObjReplacedSurface(viewer, myBaseSurface.replacedSurface, myBaseSurface.replacedTriSurface, myBaseSurface.baseSurface);
-            //     myRender.DrawObjShellStructModel(viewer, myShellStructure.shellStructure, myShellStructure.shellStructureTri);
-            //     myRender.DrawObjReplacedShellStructModel(viewer, myShellStructure.replacedShellStructure_LSM, myShellStructure.replacedShellStructureTri_LSM);
-            //     myRender.DrawObjReplacedShellPlanarModel(viewer, myShellStructure.replacedShellStructure_LSM_planar, myShellStructure.replacedShellStructureTri_LSM_planar);
-            //     myRender.DrawObjReplacedPenetrationVolumeModel(viewer, myShellStructure.replacedPenetrationVolumeTri);
-            // }
-
             // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 
             if (ImGui::Button("Save Shell", ImVec2(button_width, 0)))
@@ -640,13 +685,13 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
                 myShellStructure.SaveShell(currPath, false);
                 mySurfaceOptimizer.SaveSurface(currPath);
 
-                mySurfaceOptimizer.SaveParameter2File(currPath);
+                // mySurfaceOptimizer.SaveParameter2File(currPath);
                 mySurfaceOptimizer.SaveSurfaceOptimizationResult(currPath);
                 myShellStructure.SaveShellOptimizationResult(currPath);
-                SaveExcelTxt(currPath);
+                // SaveExcelTxt(currPath);
             }
 
-            ImGui::SameLine(0, button_horizontalGap);
+            // ImGui::SameLine(0, button_horizontalGap);
 
             // if (ImGui::Button("Save Printing", ImVec2(button_width, 0)))
             // {
@@ -678,27 +723,27 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
             //     myShellStructure.GenerateSupportForOrigShellBlocks(outputFolderPath);
             // }
 
-            ImGui::SameLine(0, button_horizontalGap);
+            // ImGui::SameLine(0, button_horizontalGap);
 
-            if (ImGui::Button("Add Texcoord", ImVec2(button_width, 0)))
-            {
-                string outputFolderPath = igl::file_dialog_open();
-                if( outputFolderPath.empty())
-                    return;
+            // if (ImGui::Button("Add Texcoord", ImVec2(button_width, 0)))
+            // {
+            //     string outputFolderPath = igl::file_dialog_open();
+            //     if( outputFolderPath.empty())
+            //         return;
 
-                cout << outputFolderPath << endl;
+            //     cout << outputFolderPath << endl;
 
-                PolyMesh currMesh;
+            //     PolyMesh currMesh;
 
-                OpenMesh::IO::read_mesh(currMesh, outputFolderPath);
+            //     OpenMesh::IO::read_mesh(currMesh, outputFolderPath);
 
-                AddVertexTextureCoord2PolyMesh(currMesh);
+            //     AddVertexTextureCoord2PolyMesh(currMesh);
 
-                OpenMesh::IO::Options ropt;
-                ropt += OpenMesh::IO::Options::VertexTexCoord;
+            //     OpenMesh::IO::Options ropt;
+            //     ropt += OpenMesh::IO::Options::VertexTexCoord;
 
-                OpenMesh::IO::write_mesh(currMesh, outputFolderPath, ropt);
-            }
+            //     OpenMesh::IO::write_mesh(currMesh, outputFolderPath, ropt);
+            // }
 
             // ImGui::Dummy(ImVec2(0.0f, 3.0f));
 

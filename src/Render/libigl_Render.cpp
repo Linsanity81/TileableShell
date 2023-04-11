@@ -284,7 +284,7 @@ void libigl_Render::DrawObjReplacedSurface(iglViewer &viewer, const PolyMesh pol
     MatrixXd fp2_mat;
     VectorXd fabLabelList;
 
-    PolyMesh2FabTestLabel(origPolyMesh, fp1_mat, fp2_mat, fabLabelList);
+    // PolyMesh2FabTestLabel(origPolyMesh, fp1_mat, fp2_mat, fabLabelList);
 
     /// Draw object
     MeshObject meshObject;
