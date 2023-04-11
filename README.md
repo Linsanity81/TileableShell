@@ -60,7 +60,7 @@ The integer following make -j is the number of threads supported by your CPU arc
 
 
 ## GUI Interface <a name = "usage"></a>
-The control panel is shown below. There are 4 components in the control panel: **Status Bar**, **Import & Remesh**, **Mesh Optimization** and **Render Control**.
+The control panel is shown below. There are 5 components in the control panel: **Status Bar**, **Import & Remesh**, **Import Remeshed Model**, **Mesh Optimization** and **Render Control**.
 <p align="center">
  <img width=640px height=400px src="doc/GUI.png" alt="Control Panel">
 </p>
