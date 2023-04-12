@@ -36,13 +36,6 @@ This repo presents a computational approach to design high-level interlocking pu
 ## Getting Started <a name = "getting_started"></a>
 Our code can be ran on MacOS and Unbuntu (Linux) system. First clone the repository, run CMake to generate Makefiles or CMake/Visual Studio project files, and the rest should just work automatically.
 
-<!-- ### Prerequisites
-We need to install `cgal` before running our code. With the help of `brew`, we can easily get `cgal`.
-
-```
-brew install cgal
-``` -->
-
 ### Compilation
 
 - **MacOS and Ubuntu(Linux)**:
@@ -60,7 +53,7 @@ The integer following make -j is the number of threads supported by your CPU arc
 
 
 ## GUI Interface <a name = "usage"></a>
-The control panel is shown below. There are 5 components in the control panel: **Status Bar**, **Import & Remesh**, **Import Remeshed Model**, **Mesh Optimization** and **Render Control**.
+The control panel is shown below. There are 4 components in the control panel: **Status Bar**, **Import & Remesh**, **Mesh Optimization** and **Render Control**.
 <p align="center">
  <img width=640px height=400px src="doc/GUI.png" alt="Control Panel">
 </p>
@@ -89,9 +82,9 @@ The control panel is shown below. There are 5 components in the control panel: *
 
   `Remesh` Map the 2D tile pattern to input surface using ARAP initialization.
 
-- ### Import Remeshed Model
-
   `Load Remeshed Mesh` Load the remeshed input mesh.
+
+  `Avg Contact Angle Error`, `Avg Overlap Ratio` and `Avg Gap Ratio` are three error metrics defined in Section 3 of our paper.
 
 - ### Mesh Optimization
 
@@ -119,22 +112,22 @@ The control panel is shown below. There are 5 components in the control panel: *
 ## Create a Masonry Shell Structures with Discrete Equivalence Classes by Yourself ! <a name = "create_puzzle"></a>
 These instructions gives an example to you of how to use our code to generate a masonry shell structures with discrete equivalence classes. 
 
-### Step 1: import & remesh
-Import a Hyperbolic.obj file and 4^4_7200.obj by clicking `read` and `texture` button, respectively. Set `Scalar` as 5.0 and `RotAngle` as -15. Then click the `remesh` button to get a remeshed surface.
+### Step 1: import input files
+Import a Hyperbolic.obj file and 4^4_7200.obj by clicking `read` and `texture` button, respectively. Here we support two kinds of input mode: `read` and `texture` for remeshing models here OR `Load Remeshed Mesh` for load your own remeshed models. Set `Scalar` as 5.0 and `RotAngle` as -15. Then click the `remesh` button to get a remeshed surface.
 
 <p align="center">
  <img width=640px height=400px src="doc/Step1.png" alt="Remeshed Surface">
 </p>
 
 ### Step 2: optimize suface
-Set the `Edge K` as 4 and `Dihedral K` as 4, click the `Opt Surface` button to optimize surface first. 
+Set the `Edge K` as 2 and `Dihedral K` as 4, click the `Opt Surface` button to optimize surface first. 
 
 <p align="center">
  <img width=640px height=400px src="doc/Step2.png" alt="Optimized Surface">
 </p>
 
 ### Step 3: optimize cutting plane
-Set the `Mini Block Cluster` as 10 and `Target Block Cluster` as 1. Set `Thickness` as 0.04. Click the `Opt CuttingPlane` button to start cutting plane optimization. Then click the `Create Shell` button to create shell structures with given thickness.
+Set the `Mini Block Cluster` as 10 and `Target Block Cluster` as 1. Set `Thickness` as 0.08. Click the `Opt CuttingPlane` button to start cutting plane optimization. Then click the `Create Shell` button to create shell structures with given thickness.
 
 <p align="center">
  <img width=640px height=400px src="doc/Step3.png" alt="Optimized Shell Structure">
