@@ -17,7 +17,7 @@ If you make use of this repo in your scientific work, please cite our paper. For
 you can use the following bibtex snippet:
 
     @article {Chen-2023-MasonryShell,
-    author   = {Rulin Chen and Pengyun Qiu and Peng Song and Bailin Deng and  Ziqi Wang and Ying He},
+    author   = {Rulin Chen and Pengyun Qiu and Peng Song and Bailin Deng and Ziqi Wang and Ying He},
     title        = {Masonry Shell Structures with Discrete Equivalence Classes},
     journal   = {ACM Transactions on Graphics (SIGGRAPH 2023)},
     year      = {2023}}

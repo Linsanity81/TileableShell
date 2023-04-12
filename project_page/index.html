@@ -2,7 +2,7 @@
 <!-- saved from url=(0085)https://sutd-cgl.github.io/supp/Publication/projects/2021-SIGAsia-3DCamMech/index.htm -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" href="./High-levelPuzzle_files/styles.css">
-  <title>High-level Interlocking Puzzle</title>
+  <title>Tileable Shell</title>
   
   <script type="text/javascript">
     google.load("jquery", "1.3.2");
@@ -61,24 +61,26 @@
 
                   <!--Header-->
                   <br><br><br>
-                  <h1><span style="font-size: 23pt">Computational Design of High-level Interlocking Puzzles</span></h1>
+                  <h1><span style="font-size: 23pt">Masonry Shell Structures with Discrete Equivalence Classes</span></h1>
                   <br>
 
                   <p class="authors">
                     <span style="font-size: 15pt">
                       Rulin Chen<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <a href="https://kiki007.github.io/">Ziqi Wang</a><sup>2, 3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      Pengyun Qiu<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <a href="https://songpenghit.github.io/">Peng Song</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <a href="http://berndbickel.com/">Bernd Bickel</a><sup>4</sup>
+                      <a href="http://www.bdeng.me">Bailin Deng</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="https://kiki007.github.io/">Ziqi Wang</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="https://personal.ntu.edu.sg/yhe/">Ying He</a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                       <br><br>
                       <sup>1</sup> <a href="https://sutd.edu.sg/">SUTD</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <sup>2</sup> <a href="https://www.epfl.ch/en/">EPFL</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <sup>2</sup> <a href="https://www.cardiff.ac.uk">Cardiff University</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <sup>3</sup> <a href="https://ethz.ch/en.html">ETH Zürich</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <sup>4</sup> <a href="https://ist.ac.at/en/home/">IST Austria</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <sup>4</sup> <a href="https://www.ntu.edu.sg">Nanyang Technological University</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       
                       <br><br>
-                      </span></p><h3 class=""><span style="font-weight: normal;"><a href="https://s2022.siggraph.org/">SIGGRAPH 2022</a>, technical paper</span></h3>
+                      </span></p><h3 class=""><span style="font-weight: normal;"><a href="https://s2023.siggraph.org/">SIGGRAPH 2023</a>, technical paper (journal track)</span></h3>
                   
                   <p class="authors">&nbsp;</p>
 
@@ -97,9 +99,7 @@
         <img src="./images/teaser.png" width="1060" alt="Figure 1">
       </div>
       <div align="justify" width:="" 1200px="">
-      <p class="figure"><strong>Figure 1:</strong> A 4-piece level-6 interlocking puzzle designed by our approach that requires 6 moves to take out the first piece (in blue color). Each sub-figure shows a
-configuration of the puzzle pieces in the disassembly plan, where arrows indicate the translational direction to move (in black) or remove (in red) a subassembly
-to reach the next configuration. Note that the two black arrows in the top right subfigure indicate a single move of a subassembly with two parts. </p>
+      <p class="figure"><strong>Figure 1:</strong> A masonry shell structure modeled by our approach, in which 181 shell elements fall into 60 discrete equivalence classes. Shell elements in the same class have exactly the same shape and are rendered with the same color. </p>
       </div>
 
       <!--------------------------------------------------------------------------------------------------->
@@ -113,9 +113,10 @@ to reach the next configuration. Note that the two black arrows in the top right
 
         <span style="font-size: 13pt">
           <!--<ul>-->
-          <p>Interlocking puzzles are intriguing geometric games where the puzzle pieces are held together based on their geometric arrangement, preventing the puzzle from falling apart. <i>High-level-of-difficulty</i>, or simply <i>high-level</i>, interlocking puzzles are a subclass of interlocking puzzles that require multiple moves to take out the first subassembly from the puzzle. Solving a high-level interlocking puzzle is a challenging task since one has to explore many different configurations of the puzzle pieces until reaching a configuration where the first subassembly can be taken out. Designing a high-level interlocking puzzle with a user-specified level of difficulty is even harder since the puzzle pieces have to be interlocking in all the configurations before the first subassembly is taken out. </p>
+          <p> Masonry shell structures have been built for centuries around the world in the form of arches, domes and vaults, due to their advantages like large span, lightweight, and high strength. The shapes of masonry shells are generally described by 3D curved surfaces since the thickness of these structures is significantly smaller compared to its width and length. From a geometric perspective, a masonry shell is a geometric tiling of a 3D surface with a number of shell elements that contact one another with no overlaps and no gaps. To tile a freeform 3D surface, it is likely that each shell element has a unique shape when compared to the other elements, requiring each element to be custom manufactured.</p>
 
-          <p>In this paper, we present a computational approach to design high-level interlocking puzzles. The core idea is to represent all possible configurations of an interlocking puzzle as well as transitions among these configurations using a rooted, undirected graph called a disassembly graph and leverage this graph to find a disassembly plan that requires a minimal number of moves to take out the first subassembly from the puzzle. At the design stage, our algorithm iteratively constructs the geometry of each puzzle piece to expand the disassembly graph incrementally, aiming to achieve a user-specified level of difficulty. We show that our approach allows efficient generation of high-level interlocking puzzles of various shape complexities, including new solutions not attainable by state-of-the-art approaches. </p>
+          <p>In this paper, we study a new problem of modeling freeform shell structures where the shell elements fall into a set of discrete equivalence classes. The major technical challenge in this process is balancing
+            the desire for high reusability of template elements with the need for a seamless and buildable final structure. To address the challenge, we define three error metrics to measure the seamlessness and buildability of shell structures made from discrete equivalence classes and develop a hierarchical cluster-and-optimize approach to generate a small set of template elements that produce a structure closely approximating the surface with low error metrics. We demonstrate the feasibility of our approach on various freeform surfaces and geometric patterns, and validate buildability of our results with four physical results.</p>
         </span>
       </div>
 
@@ -136,11 +137,11 @@ to reach the next configuration. Note that the two black arrows in the top right
 
         <!--Click the following link to download:-->
         <span style="font-size: 13pt; line-height:32px">
-          <a href="download/2022-SIGGRAPH-High-LevelPuzzle.pdf"> Paper PDF</a> (~17M) <br>
-          <a href="download/Supplementary_other.pdf"> Supplementary PDF</a> (~8M) <br>
-          <a href="download/supplementary_data.zip"> Supplementary Results</a> (~35M) <br>
+          <a href="download/2022-SIGGRAPH-High-LevelPuzzle.pdf"> Paper PDF</a> (~XXM) <br>
+          <a href="download/Supplementary_other.pdf"> Supplementary PDF</a> (~XM) <br>
+          <a href="download/supplementary_data.zip"> Supplementary Results</a> (~XXM) <br>
           <a href="https://github.com/Linsanity81/High-LevelPuzzle">Source Code</a> <br>
-          <a href="https://youtu.be/-qS8e4E_JHY">Presentation (15-min)</a> <br>
+          <a href="https://youtu.be/-qS8e4E_JHY">Presentation (XX-min)</a> <br>
           <!--<a href="https://sutd-cgl.github.io/supp/Publication/projects/2021-SIGAsia-3DCamMech/download/2021-SIGAsia-3DCamMech.pdf"> Paper PDF</a> (~25M) <br>
           <a href="https://sutd-cgl.github.io/supp/Publication/projects/2021-SIGAsia-3DCamMech/download/Supplementary.pdf">Supplementary</a> (~2.2M) <br>
           <a href="https://youtu.be/tIww6wHm4YA">Presentation</a> (5-min)  <br>
