@@ -16,7 +16,7 @@ This repo is an implementation of [Masonry Shell Structures with Discrete Equiva
 If you make use of this repo in your scientific work, please cite our paper. For your convenience,
 you can use the following bibtex snippet:
 
-    @article {Chen-2023-MasonryShell,
+    @article {Chen-2023-TileableShell,
     author   = {Rulin Chen and Pengyun Qiu and Peng Song and Bailin Deng and Ziqi Wang and Ying He},
     title        = {Masonry Shell Structures with Discrete Equivalence Classes},
     journal   = {ACM Transactions on Graphics (SIGGRAPH 2023)},
