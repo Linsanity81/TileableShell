@@ -80,19 +80,19 @@ The control panel is shown below. There are 4 components in the control panel: *
   
   1. Obtain the base mesh by parameterizing the surface using the as-rigid-as-possible (ARAP) algorithm [Liu et al. 2008] and then mapping a 2D tessellation with convex polygons onto the surface. This process can be done by using the following group of buttons. 
 
-   `Scalar`  Specify the scalar of the input tile pattern.
+  &emsp;`Scalar`  Specify the scalar of the input tile pattern.
   
-   `RotAngle` Specify the rotation angle of the input tile pattern. 
+  &emsp;`RotAngle` Specify the rotation angle of the input tile pattern. 
   
-   `Read` Load the input surface.
+  &emsp;`Read` Load the input surface.
   
-   `Texture` Load the input tile pattern.
+  &emsp;`Texture` Load the input tile pattern.
 
-   `Remesh` Map the 2D tile pattern to input surface using ARAP initialization.
+  &emsp;`Remesh` Map the 2D tile pattern to input surface using ARAP initialization.
 
   2. We can directly load the remeshed input surface using `Load Remeshed Mesh`. 
 
-   `Load Remeshed Mesh` Load the remeshed input mesh.
+  &emsp;`Load Remeshed Mesh` Load the remeshed input mesh.
 
 - ### Mesh Optimization
 
