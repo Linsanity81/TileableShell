@@ -78,7 +78,7 @@ The control panel is shown below. There are 4 components in the control panel: *
 
   Our algorithm mainly supports the polygonal architecture surface with open boundary. Here we provide two types of input modes: 
   
-  1. Obtain the base mesh by parameterizing the surface using the as-rigid-as-possible (ARAP) algorithm [Liu et al. 2008] and then mapping a 2D tessellation with convex polygons onto the surface. This process can be done by using the following group of buttons. You can find the input surfaces and tile patterns in /data/Model and /data/TilePattern, respectively.
+  1. Obtain the base mesh by parameterizing the surface using the as-rigid-as-possible (ARAP) algorithm [Liu et al. 2008] and then mapping a 2D tessellation with convex polygons onto the surface. This process can be done by using the following group of buttons. You can find the input surfaces and tile patterns in */data/Model* and */data/TilePattern*, respectively.
 
   &emsp;`Scalar`  Specify the scalar of the input tile pattern.
   
@@ -90,7 +90,7 @@ The control panel is shown below. There are 4 components in the control panel: *
 
   &emsp;`Remesh` Map the 2D tile pattern to input surface using ARAP initialization.
 
-  2. We can directly load the remeshed input surface using `Load Remeshed Mesh`. You can find the example remeshed polygonal surfaces in /data/Model_remeshed.
+  2. We can directly load the remeshed input surface using `Load Remeshed Mesh`. You can find the example remeshed polygonal surfaces in */data/Model_remeshed*.
 
   &emsp;`Load Remeshed Mesh` Load the remeshed input mesh.
 
