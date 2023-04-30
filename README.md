@@ -1,5 +1,5 @@
 <p align="center">
- <img width=640px height=260px src="doc/teaser.png" alt="Project logo">
+ <img width=640px height=220px src="doc/teaser.png" alt="Project logo">
 </p>
 
 <h3 align="center">Masonry Shell Structures with Discrete Equivalence Classes</h3>
@@ -11,16 +11,18 @@
 
 </div>
 
-This repo is an implementation of [Masonry Shell Structures with Discrete Equivalence Classes](doc/Paper.pdf) [Chen et al. 2023]. Commercial licensing is available upon request. If you have any problems when using this code, you can contact me any time through rulin_chen@mymail.sutd.edu.sg.
+This repo is an implementation of [Masonry Shell Structures with Discrete Equivalence Classes](doc/Paper.pdf) [Chen et al. 2023]. Commercial licensing is available upon request. If you have any problems when using this code, you can contact me any time through 1998rlchen@gmail.com.
 
 If you make use of this repo in your scientific work, please cite our paper. For your convenience,
 you can use the following bibtex snippet:
 
-    @article {Chen-2023-TileableShell,
-    author   = {Rulin Chen and Pengyun Qiu and Peng Song and Bailin Deng and Ziqi Wang and Ying He},
-    title        = {Masonry Shell Structures with Discrete Equivalence Classes},
-    journal   = {ACM Transactions on Graphics (SIGGRAPH 2023)},
-    year      = {2023}}
+    @article {Chen-2023-TileableShell, 
+    author   = {Rulin Chen and Pengyun Qiu and Peng Song and Bailin Deng and Ziqi Wang and Ying He}, 
+    title    = {Masonry Shell Structures with Discrete Equivalence Classes}, 
+    journal  = {ACM Transactions on Graphics (SIGGRAPH 2023)}, 
+    volume   = {42}, 
+    number   = {4}, 
+    year     = {2023}} 
 
 ## Table of Contents
 - [About](#about)
@@ -31,7 +33,7 @@ you can use the following bibtex snippet:
 - [Acknowledgments](#acknowledgement)
 
 ## About <a name = "about"></a>
-This repo presents a computational approach to design high-level interlocking puzzles. We implemented our computational design tool in C++ and `libigl` [Jacobson et al. 2018] on a desktop computer with 3.6 GHz 8-Core Intel processor and 16 GB RAM. 
+This repo presents a computational approach to design masonry shell structures with discrete equivalence classes. We implemented our computational design tool in C++ and `libigl` [Jacobson et al. 2018] on a desktop computer with 3.6 GHz 8-Core Intel processor and 16 GB RAM. 
 
 ## Getting Started <a name = "getting_started"></a>
 Our code can be ran on MacOS and Unbuntu (Linux) system. First clone the repository, run CMake to generate Makefiles or CMake/Visual Studio project files, and the rest should just work automatically.
@@ -70,33 +72,39 @@ The control panel is shown below. There are 4 components in the control panel: *
 
   `Unique Block` Display the number of block templates.
 
+  `Avg Contact Angle Error`, `Avg Overlap Ratio` and `Avg Gap Ratio` are three error metrics defined in Section 3 of our paper.
+
 - ### Import & Remesh
 
-  `Scalar`  Determine the scalar of the input tile pattern.
+  Our algorithm mainly supports the architectural surface with open boundary. Here we provide two types of input modes: 
   
-  `RotAngle` Determine the rotation angle of the input tile pattern. 
+  1. Obtain the base mesh by parameterizing the surface using the as-rigid-as-possible (ARAP) algorithm [Liu et al. 2008] and then mapping a 2D tessellation with convex polygons onto the surface. This process can be done by using the following group of buttons. 
+
+   `Scalar`  Specify the scalar of the input tile pattern.
   
-  `Read` Load the input surface.
+   `RotAngle` Specify the rotation angle of the input tile pattern. 
   
-  `Texture` Load the input tile pattern.
+   `Read` Load the input surface.
+  
+   `Texture` Load the input tile pattern.
 
-  `Remesh` Map the 2D tile pattern to input surface using ARAP initialization.
+   `Remesh` Map the 2D tile pattern to input surface using ARAP initialization.
 
-  `Load Remeshed Mesh` Load the remeshed input mesh.
+  2. We can directly load the remeshed input surface using `Load Remeshed Mesh`. 
 
-  `Avg Contact Angle Error`, `Avg Overlap Ratio` and `Avg Gap Ratio` are three error metrics defined in Section 3 of our paper.
+   `Load Remeshed Mesh` Load the remeshed input mesh.
 
 - ### Mesh Optimization
 
-  `Edge K` Determine the target cluster number of edge length. 
+  `Edge K` Specify the target cluster number of edge length. 
 
-  `Dihedral K` Determine the target cluster number of dihedral angle.
+  `Dihedral K` Specify the target cluster number of dihedral angle.
 
-  `Mini Block Cluster` Determine the threshold to define if the block cluster is considered to be merged.
+  `Mini Block Cluster` Specify the threshold to define if the block cluster is considered to be merged.
 
-  `Target Block Cluster` Determine the threshold to stop the block cluster merging operation. 
+  `Target Block Cluster` Specify the threshold to stop the block cluster merging operation. 
 
-  `Thickness` Determine the thickness of each shell block.
+  `Thickness` Specify the thickness of each shell block.
 
   `Opt Surface` Optimize surface to reach lower number of polygon templates.
 
@@ -149,7 +157,7 @@ Lastly, you can click `Save Shell` to save the related data and *.obj* files tha
 - [Ying He](https://personal.ntu.edu.sg/yhe/)
 
 ## Acknowledgements <a name = "acknowledgement"></a>
-We thank the reviewers for the valuable comments, David Gontier for sharing the source code of the baseline design approach, and Christian Hafner for proofreading the paper. This work was supported by the SUTD start-up Research Grant (Number: SRG ISTD 2019 148), and the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No 715767 - MATERIALIZABLE).
+We thank the reviewers for their valuable comments, and Zebin Chen for helping on preparing some 3D surface models and renderings. This work was supported by the SUTD grant RS-INSUR-00027, the Ministry of Education, Singapore, under its Academic Research Fund Grants (RG20/20 & MOE-T2EP20220-0014), and the Royal Society (IES\R3\193208).
 
 
 
