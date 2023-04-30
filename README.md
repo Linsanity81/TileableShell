@@ -76,7 +76,7 @@ The control panel is shown below. There are 4 components in the control panel: *
 
 - ### Import & Remesh
 
-  Our algorithm mainly supports the architectural surface with open boundary. Here we provide two types of input modes: 
+  Our algorithm mainly supports the polygonal architecture surface with open boundary. Here we provide two types of input modes: 
   
   1. Obtain the base mesh by parameterizing the surface using the as-rigid-as-possible (ARAP) algorithm [Liu et al. 2008] and then mapping a 2D tessellation with convex polygons onto the surface. This process can be done by using the following group of buttons. 
 
