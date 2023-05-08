@@ -1,5 +1,5 @@
 <p align="center">
- <img width=640px height=220px src="doc/teaser.png" alt="Project logo">
+ <img width=640px height=200px src="doc/teaser.png" alt="Project logo">
 </p>
 
 <h3 align="center">Masonry Shell Structures with Discrete Equivalence Classes</h3>
