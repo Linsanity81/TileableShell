@@ -72,7 +72,7 @@ The control panel is shown below. There are 4 components in the control panel: *
 
   `Unique Block` Display the number of block templates.
 
-  `Avg Contact Angle Error`, `Avg Overlap Ratio` and `Avg Gap Ratio` are three error metrics defined in Section 3 of our paper.
+  `Avg Contact Angle Error`, `Avg Overlap Ratio` and `Avg Gap Ratio` are three error metrics defined in Section 3 of our paper. These metric values will be updated after creating a shell structure successfully by clicking `Create Shell` button.
 
 - ### Import & Remesh
 
