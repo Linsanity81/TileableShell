@@ -80,9 +80,9 @@ The control panel is shown below. There are 4 components in the control panel: *
   
   1. Obtain the base mesh by parameterizing the surface using the as-rigid-as-possible (ARAP) algorithm [Liu et al. 2008] and then mapping a 2D tessellation with convex polygons onto the surface. This process can be done by using the following group of buttons. You can find the input surfaces and tile patterns in */data/Model* and */data/TilePattern*, respectively.
 
-  &emsp;`Scalar`  Specify the scalar of the input tile pattern.
+  &emsp;`Scalar`  Specify the scalar of the input tile pattern. Users can use keyboard `M` and `N` to scale up / down the tile pattern interactively.
   
-  &emsp;`RotAngle` Specify the rotation angle of the input tile pattern. 
+  &emsp;`RotAngle` Specify the rotation angle of the input tile pattern. Users can use keyboard `U` and `I` to rotate the tile pattern interactively.
   
   &emsp;`Read` Load the input surface.
   
