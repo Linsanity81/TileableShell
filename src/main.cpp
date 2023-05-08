@@ -144,7 +144,7 @@ void InitViewer()
 
 bool key_down(iglViewer &Viewer, unsigned char key, int modifier)
 {
-    if (key == 'M')
+    if (key == 'M' and mySurface.V.size() != 0 and myTilePattern.inputTilePattern.n_edges() != 0)
     {
         myTilePattern.scalar -= 0.1;
 
@@ -159,7 +159,7 @@ bool key_down(iglViewer &Viewer, unsigned char key, int modifier)
         myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface);
     }
 
-    else if (key == 'N')
+    else if (key == 'N' and mySurface.V.size() != 0 and myTilePattern.inputTilePattern.n_edges() != 0)
     {
         myTilePattern.scalar += 0.1;
 
@@ -174,7 +174,7 @@ bool key_down(iglViewer &Viewer, unsigned char key, int modifier)
         myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface);
     }
 
-    else if (key == 'U')
+    else if (key == 'U' and mySurface.V.size() != 0 and myTilePattern.inputTilePattern.n_edges() != 0)
     {
         myTilePattern.rotationAngle += 10;
 
@@ -189,7 +189,7 @@ bool key_down(iglViewer &Viewer, unsigned char key, int modifier)
         myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface);
     }
 
-    else if (key == 'I')
+    else if (key == 'I' and mySurface.V.size() != 0 and myTilePattern.inputTilePattern.n_edges() != 0)
     {
         myTilePattern.rotationAngle -= 10;
 

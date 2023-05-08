@@ -306,15 +306,30 @@ void setViewerUI(igl::opengl::glfw::Viewer &viewer)
 
             if (ImGui::Button("Remesh", ImVec2(button_width*0.65, 0)))
             {
-                Initialization myInit;
-                myInit.isPlanarization = isPlanarization;
-                myInit.Remeshing(&mySurface, &myTilePattern, &myBaseSurface);
+                if (mySurface.V.size() != 0 and myTilePattern.inputTilePattern.n_edges() != 0)
+                {
+                    Initialization myInit;
+                    myInit.isPlanarization = isPlanarization;
+                    myInit.Remeshing(&mySurface, &myTilePattern, &myBaseSurface);
 
-                myRender.ClearViewer(viewer);
+                    myRender.ClearViewer(viewer);
 
-                myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
-                myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
-                myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
+                    myRender.DrawObjModel(viewer, mySurface.inputSurfaceTriMesh);
+                    myRender.DrawObjModelTexture(viewer, myTilePattern.inputTilePattern, myTilePattern.inputTriTilePattern);
+                    myRender.DrawObjRemeshingModel(viewer, myBaseSurface.remeshedPolySurface, myBaseSurface.remeshedTriSurface, isShowRemeshedSurfaceEdgeNormal);
+                }
+                else
+                {
+                    if (mySurface.V.size() == 0)
+                    {
+                        cout << "Cannot remesh due to no surface loaded so far." << endl;
+                    }
+
+                    if (myTilePattern.inputTilePattern.n_edges() == 0)
+                    {
+                        cout << "Cannot remesh due to no tile pattern loaded so far." << endl;
+                    }
+                }
             }
 
             // ImGui::Dummy(ImVec2(0.0f, 3.0f));
