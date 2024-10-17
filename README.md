@@ -53,8 +53,6 @@ The integer following make -j is the number of threads supported by your CPU arc
 
 Please note that the code has been **tested** on Ubuntu environment (Thanks Vincent Nivoliers!). The instructions below are specifically for an Ubuntu-based container.
 
-## Compilation Dependencies
-
 To compile the code in the Ubuntu environment, the following packages were required:
 
 - `libboost-filesystem-dev`
@@ -64,8 +62,6 @@ To compile the code in the Ubuntu environment, the following packages were requi
 - `libglfw3-dev`
 - `libxinerama-dev`
 - `libxi-dev`
-
-## Runtime Dependencies
 
 After compilation, an additional package was needed to load the remeshed mesh:
 
