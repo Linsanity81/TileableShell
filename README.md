@@ -51,6 +51,28 @@ $ make -j 16
 ```
 The integer following make -j is the number of threads supported by your CPU architecture. Replace it with your optimal value.
 
+Please note that the code has been **tested** on Ubuntu environment (Thanks Vincent Nivoliers!). The instructions below are specifically for an Ubuntu-based container.
+
+## Compilation Dependencies
+
+To compile the code in the Ubuntu environment, the following packages were required:
+
+- `libboost-filesystem-dev`
+- `libboost-thread-dev`
+- `libgmp-dev`
+- `libmpfr-dev`
+- `libglfw3-dev`
+- `libxinerama-dev`
+- `libxi-dev`
+
+## Runtime Dependencies
+
+After compilation, an additional package was needed to load the remeshed mesh:
+
+- `zenity`
+
+Ensure all these dependencies are installed to avoid any issues during the build and execution phases.
+
 - **Windows**: our code can be run on VM16 + Ubuntu 20.04 environment.
 
 
